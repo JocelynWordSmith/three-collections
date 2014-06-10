@@ -27,8 +27,8 @@
         <div class="container-right bound"></div>
 
         <!-- template for individual  -->
-        <script type="text/javascript" class="image-view">
-            <a href="/#url/<%= id %>"><img src="<%= url %>"></a>
+        <script type="text/template" class="image-view">
+             <a href="/#url/<%= _id %>"><img src="<%= url %>" class="item-img"></a> 
 
             <div class="set-left button">set left</div>
             <div class="set-center button">set center</div>
@@ -39,6 +39,8 @@
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
         <script src="../bower_components/jquery/dist/jquery.js"></script>
+        <script src="../bower_components/underscore/underscore.js"></script>
+        <script src="../bower_components/backbone/backbone.js"></script>
         <!-- endbower -->
         <!-- endbuild -->
 
@@ -69,6 +71,9 @@
 
         <!-- build:js({app,.tmp}) scripts/main.js -->
         <script src="scripts/main.js"></script>
+        <script src="scripts/models.js"></script>
+        <script src="scripts/view.js"></script>
+        <script src="scripts/router.js"></script>
         <!-- endbuild -->
 </body>
 </html>
