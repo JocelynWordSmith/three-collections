@@ -1,6 +1,8 @@
 'use strict';
+var position;
 
 var AppRouter = Backbone.Router.extend({
+
 
 	initialize: function() {
 		console.log('app router has initialized');
@@ -11,7 +13,8 @@ var AppRouter = Backbone.Router.extend({
 
 		leftColumn.fetch().done(function() {
 			leftColumn.each(function(item) {
-				new LeftView({
+				position = 'left';
+				new ColumnView({
 					model: item
 				});
 			});
@@ -19,7 +22,8 @@ var AppRouter = Backbone.Router.extend({
 
 		centerColumn.fetch().done(function() {
 			centerColumn.each(function(item) {
-				new CenterView({
+				position = 'center';
+				new ColumnView({
 					model: item
 				});
 			});
@@ -27,7 +31,8 @@ var AppRouter = Backbone.Router.extend({
 
 		rightColumn.fetch().done(function() {
 			rightColumn.each(function(item) {
-				new RightView({
+				position = 'right';
+				new ColumnView({
 					model: item
 				});
 			});

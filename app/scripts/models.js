@@ -4,7 +4,7 @@ var ItemModel = Backbone.Model.extend ({
 	idAttribute: '_id',
 
 	defaults: {
-		'url' : 'http://www.popkitten.com/wp-content/uploads/2011/12/Sad-Cat-1.jpg',
+		// 'url' : 'http://www.popkitten.com/wp-content/uploads/2011/12/Sad-Cat-1.jpg',
 		'caption' : 'default caption',
 	},
 });

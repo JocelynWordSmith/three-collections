@@ -1,6 +1,6 @@
 'use strict';
 
-var LeftView = Backbone.View.extend({
+var ColumnView = Backbone.View.extend({
 
 	className: 'left-bound',
 
@@ -14,7 +14,7 @@ var LeftView = Backbone.View.extend({
 
 	initialize: function() {
 
-		$('.container-left').append(this.el);
+		$('.container-' + position).append(this.el);
 		this.render();
 	},
 
@@ -29,8 +29,10 @@ var LeftView = Backbone.View.extend({
 			url		: this.model.attributes.url, 
 			caption	: this.model.attributes.caption
 		});
-		this.model.destroy();
-		this.render();
+		this.model.destroy().done(function(){	
+		$('.bound').html('');
+		var router = new AppRouter();
+		})
 
 	},
 	setCenter: function() {
@@ -38,8 +40,10 @@ var LeftView = Backbone.View.extend({
 			url		: this.model.attributes.url, 
 			caption	: this.model.attributes.caption
 		});
-		this.model.destroy();
-		this.render();
+		this.model.destroy().done(function(){	
+		$('.bound').html('');
+		var router = new AppRouter();
+		})
 
 	},
 	setRight: function() {
@@ -47,112 +51,11 @@ var LeftView = Backbone.View.extend({
 			url		: this.model.attributes.url, 
 			caption	: this.model.attributes.caption
 		});
-		this.model.destroy();
-		this.render();
+		this.model.destroy().done(function(){	
+		$('.bound').html('');
+		var router = new AppRouter();
+		})
 
 	},
 });
 
-var CenterView = Backbone.View.extend({
-
-	className: 'center-bound',
-
-	events: {
-		"click .set-left" : "setLeft",
-		"click .set-center" : "setCenter",
-		"click .set-right" : "setRight",
-	},
-
-	template: _.template($('.image-view').text()),
-
-	initialize: function() {
-
-		$('.container-center').append(this.el);
-		this.render();
-	},
-
-	render: function() {
-		var renderedTemplate = this.template(this.model.attributes);
-		this.$el.html(renderedTemplate);
-	},
-
-	setLeft: function() {
-		$.post('http://tiny-pizza-server.herokuapp.com/collections/js-items-one', { 
-			url		: this.model.attributes.url, 
-			caption	: this.model.attributes.caption
-		});
-		this.model.destroy();
-		this.render();
-
-	},
-	setCenter: function() {
-		$.post('http://tiny-pizza-server.herokuapp.com/collections/js-items-two', { 
-			url		: this.model.attributes.url, 
-			caption	: this.model.attributes.caption
-		});
-		this.model.destroy();
-		this.render();
-
-	},
-	setRight: function() {
-		$.post('http://tiny-pizza-server.herokuapp.com/collections/js-items-three', { 
-			url		: this.model.attributes.url, 
-			caption	: this.model.attributes.caption
-		});
-		this.model.destroy();
-		this.render();
-
-	},
-});
-
-var RightView = Backbone.View.extend({
-
-	className: 'right-bound',
-
-		events: {
-		"click .set-left" : "setLeft",
-		"click .set-center" : "setCenter",
-		"click .set-right" : "setRight",
-	},
-
-	template: _.template($('.image-view').text()),
-
-	initialize: function() {
-
-		$('.container-right').append(this.el);
-		this.render();
-	},
-
-	render: function() {
-		var renderedTemplate = this.template(this.model.attributes);
-		this.$el.html(renderedTemplate);
-	},
-
-	setLeft: function() {
-		$.post('http://tiny-pizza-server.herokuapp.com/collections/js-items-one', { 
-			url		: this.model.attributes.url, 
-			caption	: this.model.attributes.caption
-		});
-		this.model.destroy();
-		this.render();
-
-	},
-	setCenter: function() {
-		$.post('http://tiny-pizza-server.herokuapp.com/collections/js-items-two', { 
-			url		: this.model.attributes.url, 
-			caption	: this.model.attributes.caption
-		});
-		this.model.destroy();
-		this.render();
-
-	},
-	setRight: function() {
-		$.post('http://tiny-pizza-server.herokuapp.com/collections/js-items-three', { 
-			url		: this.model.attributes.url, 
-			caption	: this.model.attributes.caption
-		});
-		this.model.destroy();
-		this.render();
-
-	},
-});
