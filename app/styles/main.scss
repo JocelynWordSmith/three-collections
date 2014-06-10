@@ -1,0 +1,15 @@
+$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+
+// bower:scss
+@import '../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss';
+// endbower
+
+.bound {
+    width: 300px;
+    min-height: 800px;
+
+    display: inline-block;
+    float: left;
+
+    border: solid 1px black;
+}
