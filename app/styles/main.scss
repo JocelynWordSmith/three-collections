@@ -17,8 +17,10 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 }
 
 .item-img {
-    width: 300px;
+    height: 150px;
 
+    clear: both;
+    /*float: left;*/
     overflow: hidden;
     margin: auto;
 }
@@ -31,9 +33,20 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
     float: left;
 
     border: solid 1px black;
+    background-color: white;
 
     text-align: center;
     line-height: 18px;
     margin: 1px;
 
+}
+
+.container-left {
+    background-color: blue;
+}
+.container-center {
+    background-color: green;
+}
+.container-right {
+    background-color: gray;
 }
