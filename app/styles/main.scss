@@ -1,23 +1,33 @@
 
-$icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/";
+.header {
+    width: 100%;
+    background-color: gray;
+    height: 175px;
+    
+    img {
+        width: 150px;
+        float: left;
 
-// bower:scss
-@import '../../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap.scss';
-// endbower
-
-
+    }
+}
 .bound {
-    width: 300px;
+    width: 30%;
     min-height: 800px;
 
-    display: inline-block;
     float: left;
 
     border: solid 1px black;
+    margin-right: 4%;
+}
+
+.columns .bound:nth-of-type(3n) {
+    margin-right: 0px;
+    float: right;
 }
 
 .item-img {
-    height: 150px;
+    /*height: 150px;*/
+    width: 100%;
 
     clear: both;
     /*float: left;*/
@@ -49,4 +59,31 @@ $icon-font-path: "/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 }
 .container-right {
     background-color: gray;
+}
+
+
+.footer {
+    clear: both;
+    height: 150px;
+    width: 100%;
+    background-color: gray;
+}
+
+
+@media screen and (min-width: 405px) {
+    body {
+        background-color: white;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    body {
+        background-color: #CCEAED;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    body {
+        background-color: #97E8F0;
+    }
 }

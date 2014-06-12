@@ -6,6 +6,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
         <link rel="shortcut icon" href="/favicon.ico">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <!-- build:css styles/vendor.css -->
         <!-- bower:css -->
@@ -21,11 +22,18 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <!-- containers that collections will be put into -->
-        <div class="container-left bound"></div>
-        <div class="container-center bound"></div>
-        <div class="container-right bound"></div>
+        <div class="header">
+            <img src="../images/bluth-logo.jpg">
+        </div>
 
+        <!-- containers that collections will be put into -->
+        <div class="columns">
+            <div class="container-left bound"></div>
+            <div class="container-center bound"></div>
+            <div class="container-right bound"></div>
+        </div>
+
+        <div class="footer"></div>
         <!-- template for individual  -->
         <script type="text/template" class="image-view">
              <a href="/#url/<%= _id %>"><img src="<%= url %>" class="item-img"></a><br>
@@ -34,7 +42,6 @@
             <div class="set-center button">set center</div>
             <div class="set-right button">set right</div>
         </script>
-
 
         <!-- build:js scripts/vendor.js -->
         <!-- bower:js -->
